@@ -1,0 +1,23 @@
+{
+   "qBank" : [
+    {
+      "question":
+      "Who is the most influensive in your opinion?",
+      "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
+      "questionId": "099099"
+    },
+    {
+      "question":
+      "Who is the smartest in your point of view?",
+      "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
+      "questionId": "183452"
+    },
+    {
+      "question":
+        "Whom you would take an example from?  ",
+      "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
+      "questionId": "267908"
+    }
+]
+
+}
