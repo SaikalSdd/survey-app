@@ -1,33 +1,26 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import "./assets/style.css";
-import QuestionBox from './components/QuestionBox'
-import "./assets/style.css";
-import axios from 'axios';
+import Registration from './components/Registration';
+import Login from './components/Login';
 
-class Questions extends Component{
-    state = {
-        questionBank: []
+export default class App extends Component {
+
+    handleSuccessfulAuth(data) {
+        this.props.handleLogin(data);
+        this.props.history.push("/dashboard")
     }
-     
-    componentDidMount(){
-        axios.get(`http://localhost:3000/qBank`)
-        .then(res => {
-            console.log(res)
-            this.setState({questionBank: res.data});
-        })
-    }
-    render(){
+
+    render() {
         return (
-            <div className = 'container'>
-                <div className = "title">Questions</div>
-                {this.state.questionBank.map(({question, answers, questionId}) => (<QuestionBox 
-                     question = {question} 
-                     options = {answers}
-                     key = {questionId}
-                    />))}
+            <div>
+                <h1>Home</h1>
+                <h1>Status: {this.props.loggedInStatus}</h1>
+                <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                <Login />
             </div>
         )
     }
 }
-ReactDOM.render(<Questions />, document.getElementById('root'));
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
