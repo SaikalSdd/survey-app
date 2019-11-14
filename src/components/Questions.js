@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import "../assets/style.css";
 import QuestionBox from './QuestionBox'
 import axios from 'axios';
 
-class Questions extends Component{
+export default class Questions extends Component{
     state = {
         questionBank: []
     }
@@ -30,4 +29,3 @@ class Questions extends Component{
     }
 }
 
-export default Questions;

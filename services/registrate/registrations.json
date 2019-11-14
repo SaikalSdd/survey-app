@@ -1,0 +1,23 @@
+{
+    "users" : [
+     {
+       "email":
+       "sddbakirova@gmail.com",
+       "password": "sddQWERTY",
+       "questionId": "099099"
+     },
+     {
+       "email":
+       "Who is the smartest in your point of view?",
+       "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
+       "questionId": "183452"
+     },
+     {
+       "email":
+         "Whom you would take an example from?  ",
+       "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
+       "questionId": "267908"
+     }
+ ]
+ 
+ }
