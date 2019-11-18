@@ -316,8 +316,14 @@ background-position: left 4px;
 form{
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
+  width: 1000px;
   padding-left: 600px;
+}
+.search-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
 }
 
 input[type='search']{
@@ -338,18 +344,18 @@ input[type='search']{
 }
 
 button{
-  flex: 1 0 20px;
+  flex: 1 0 50px;
 
   max-height: 3em;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 30px;
   border-radius: 15px 15px 15px 15px;
 	background: #5F76FF;
   color: white;
   border: none;
   cursor: pointer;
   z-index: 1;
-  margin-left: -20px;
+  margin-left: -300px;
 }
 
 .vertical-line{
