@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import "../assets/style.css";
-import QuestionBox from './QuestionBox'
 import axios from 'axios';
 
 import sortIcon from '../assets/images/sort.svg'
+import PollsTable from './PollsTable';
 
 
 export default class Questions extends Component{
     state = {
-        polls: []
+        data: []
     }
-   
     componentDidMount(){
         axios.get(`http://localhost:3000/qBank`)
-        .then(res => {
+        .then(res => {  
             console.log(res)
-            this.setState({polls: res.data});
+            this.setState({data: res.data});
         })
-    }
+        .catch(error => 
+          console.log("error:", error))
+      }
     render(){
         return (
             <PollsContainer>
                 <Sorting><img alt="Сортировка" src={sortIcon}/><span>Сортировка</span></Sorting>
                 <PollTitles>Названия опросов</PollTitles>
-                {this.state.polls.map(({question, answers, questionId}) => (<QuestionBox 
-                     question = {question} 
-                     options = {answers}
-                     key = {questionId}
-                    />))}
+                <PollsTable  />
                 
             </PollsContainer>
         )
@@ -57,6 +54,7 @@ p {
     padding-left: 30px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+  
 img {
     margin-right: 20px;
     width: 20px;
