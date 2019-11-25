@@ -7,7 +7,7 @@ import sortIcon from '../assets/images/sort.svg'
 import PollsTable from './PollsTable';
 
 
-export default class Questions extends Component{
+export default class MyPolls extends Component{
     state = {
         data: []
     }

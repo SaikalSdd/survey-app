@@ -6,8 +6,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact';
-import styles from '../assets/st.css'
-import '../assets/st.css'
+import styled from 'styled-components'
+import facebook from '../assets/images/facebook.svg'
+
 
 /* //Login with facebook
 const responseFacebook = (response) => {
@@ -58,7 +59,8 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div className= 'wrapper'>
+            <div className='filter_background'>
+                <div>
                 <div className='container'>
                 <h1 className='header'>WELCOME TO</h1>
                 <a className='logotype' href='#'></a>
@@ -102,12 +104,9 @@ export default class Login extends Component {
                     <div className="text-center py-4 mt-2">
                     <MDBBtn color="red" type="submit" block>Sign In</MDBBtn>
                     <p className="mt-3"><hr/>или</p>
-                    <MDBBtn social="fb" color="blue" block>
-                        <MDBIcon fab icon="facebook-f" className="pr-1"/>Войти через Facebook
-                    </MDBBtn>
-                    <MDBBtn social="gplus" color='red' block>
-                        <MDBIcon fab icon="google-plus-g" className="pr-1"/>Войти через Google
-                    </MDBBtn>  
+                    <FacebookButton>Зарегистрироваться с помощью Facebook</FacebookButton>
+                    <GoogleButton>Зарегистрироваться с помощью Google</GoogleButton>
+                      
                     <p className="mt-4" style={{fontSize:10, width:200}}>Продолжая, вы соглашаетесь с <a href="#">Условиями использования</a> и 
                     <a href="instagram.com"> Политикой конфиденциальности</a> Survey App</p>
                     <div className="copyright">
@@ -119,7 +118,59 @@ export default class Login extends Component {
                 </MDBRow>
                 </div>
                 </div>
-        </div>
+                </div>
+                </div>
         )
+
+    
     }
 }
+
+const FacebookButton = styled.button`
+    width: 450px;
+    height: 42px;
+    background: #3A71FF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+    border: none;
+    margin: 0 auto;
+    cursor: pointer;
+
+    ::before{
+        content: '';
+        width: 35px;
+        height: 36px;
+        left: 24px;
+        top: 3px;
+        transform: translate(-50%);
+        background: url(${facebook});
+        position: absolute;
+`
+const GoogleButton = styled.button`
+    width: 450px;
+    height: 42px;
+    background: #FF473A;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+    border: none;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 20px;
+
+    ::before{
+        content: '';
+        width: 35px;
+        height: 36px;
+        left: 24px;
+        top: 3px;
+        transform: translate(-50%);
+        background: url(${facebook});
+        position: absolute;
+`
+

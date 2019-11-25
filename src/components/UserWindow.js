@@ -4,6 +4,8 @@ import '../assets/st.css'
 import styled from 'styled-components'
 import MyPolls from './MyPolls'
 import SideNav from './SideNav';
+import NavContent from './NavContent';
+
 
 import background from '../assets/images/luco.png'
 import profileImg from '../assets/images/profile-img.png'
@@ -50,23 +52,7 @@ export default class UserWindow extends Component {
                         <ProfileImg src = {profileImg} />
                     </SearchProf>
                 </TopBlock>
-                    <Switch>
-                        <Route path="/my-polls">
-                            <MyPolls />
-                        </Route>
-                        <Route path="/all-polls">
-                            <h1>All polls</h1>
-                        </Route>
-                        <Route path="/create-poll">
-                            <h1>Create poll</h1>
-                        </Route>
-                        <Route path="/statistics">
-                            <h1>Statistics</h1>
-                        </Route>
-                        <Route path="/profile">
-                            <h1>Profile</h1>
-                        </Route>
-                    </Switch>
+                <NavContent />
                     </MainFrame>
                 </Router>
             </WindowContainer>
