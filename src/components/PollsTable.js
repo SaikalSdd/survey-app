@@ -5,75 +5,45 @@ import '../assets/st.css'
 import styled from 'styled-components'
 
 import threeDotsIcon from '../assets/images/three-dots.svg'
+import profileImg from '../assets/images/profile-img.png'
 
-/*
-export default class PollsTable extends Component{
-  state = {
-    data: []
-}
-componentDidMount(){
-    axios.get(`http://localhost:3000/qBank`)
-    .then(res => {  
-        console.log(res)
-        this.setState({data: res.data});
-    })
-    .catch(error => 
-      console.log("error:", error))
-  }
-constructor(props){
-  super(props);
-  this.getHeader = this.getHeader.bind(this);
-  this.getRowsData = this.getRowsData.bind(this);
-  this.getKeys = this.getKeys.bind(this);
-}
-
-getKeys = () => {
-  return Object.keys(this.props.data[0])
-}
-
-getHeader = () => {
-  var keys = this.getKeys();
-  return keys.map((key, index) => {
-  return <th key={key}>{key}</th>
-  })
-}
-
-
- getRowsData = () => {
-  var items = this.props.data;
-  var keys = this.getKeys();
-  return items.map((row, index)=>{
-  return <tr key={index}><RenderRow key={index} data={row} keys={keys}/></tr>
-  })
-  }
-
-
-render() {
-  return(
-    <div>
-      <table>
-        <thead>
-          <tr>{this.getHeader()}</tr>
-        </thead>
-        <tbody>
-          {this.getRowsData()}
-        </tbody>
-      </table>
-    </div>
-  )
-}
-} */
 
 export default class PollsTable extends React.Component {
-  constructor(){
-    super() 
+  constructor(props){
+    super(props) 
       this.state = {
-        data: []
+        data: [],
+        showMenu: false,
       }
+
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
     
   }
+
+  showMenu(event) {
+    event.preventDefault();
+    
+    this.setState({ showMenu: true }, () => {
+      document.addEventListener('click', this.closeMenu);
+    });
+    this.props.showMenu();
+  }
+  
+  closeMenu(event) {
+    
+    if (!this.dropdownMenu.contains(event.target)) {
+      
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });  
+      
+    }
+  }
+
+
 componentDidMount(){
-    axios.get(`http://localhost:3000/qBank`)
+    axios.get(`http://localhost:3001/my-polls`)
     .then(res => {  
         console.log(res)
         this.setState({data: res.data});
@@ -87,30 +57,78 @@ componentDidMount(){
       
         this.state.data.map(function(item, key) {
              return (
-            <table className='tbody'>
+            <TableBody>
+              <ProfileImg key = {key} src={profileImg}/>
               <thead>
-                <tr key = {key}>
+                <a><TableRow key = {key}>
                     {item.questionTitle}
-                </tr>
-                <tr key = {key}>
-                    <td className='updated-text' >{item.updated}</td>
-                </tr>
+                </TableRow></a>
+                <TableRow key = {key}>
+                    <UpdatedText >{item.updated}</UpdatedText>
+                </TableRow>
               </thead>
-              <thead className='dateCreated'>
+              <DateCreated>
               <td>{item.dataCreated}</td>
-              </thead>
-              <a><ThreeDots src={threeDotsIcon} /></a>
-              </table>
-
+              </DateCreated>
+              <ThreeDots src={threeDotsIcon} /* onClick={this.showMenu} */ onClick={()=> alert("clicked ")} />
+              {/* {
+          this.state.showMenu
+            ? (
+              <div
+                className="menu"
+                ref={(element) => {
+                  this.dropdownMenu = element;
+                }}
+              >
+                <button> Menu item 1 </button>
+                <button> Menu item 2 </button>
+                <button> Menu item 3 </button>
+              </div>
+            )
+            : (
+              null
+            )
+        } */}
+              </TableBody> 
               )})
     )
   }
 }
 
+const ProfileImg = styled.img`
+width: 50px;
+margin-right: 25px;
+`
+
+const TableRow = styled.tr`
+font-weight: bold;
+  font-size: 20px; 
+  width: 250px;
+  display: block;
+`
+
+const TableBody = styled.table`
+display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 20px;
+`
+const DateCreated = styled.thead`
+margin-left: 1000px;
+display: block;
+  width: 200px;
+`
+const UpdatedText = styled.td`
+color: #5F76FF;
+`
 const ThreeDots = styled.img`
 padding-left: 70px;
-src: url({threeDotsIcon})
-
+src: url(${threeDotsIcon})
 `
+
+
+
+
+
 
 

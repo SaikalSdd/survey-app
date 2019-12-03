@@ -1,0 +1,66 @@
+{
+    "takePoll" : [
+     {
+       "userName": "Имя пользователя",
+       "questionId": 1,
+       "questionTitle":
+       "В каком времени года родился А.С.Пушкин?",
+       "questionType": "Выберите из предложенных вариантов",
+       "optionsImg": [
+            "./images/option1",
+            "./images/option2",
+            "./images/option3",
+            "./images/option4"
+       ],
+       "optionsText": [
+            "Осень",
+            "Зима",
+            "Лето",
+            "Весна"
+       ]
+     },
+     {
+       "questionTitle":
+       "Как звали короля 'поп-музыки'?",
+       "questionId": 2,
+       "questionType": "Напишите свой вариант"
+     },
+     {
+       "questionTitle":
+       "Когда родился Леонардо Да Винчи?",
+       "questionId": 3,
+       "questionType": "Выберите дату"
+     },
+     {
+       "questionTitle":
+       "Когда родился Леонардо Да Винчи?",
+       "questionId": 4,
+       "questionType": "Выберите дату"
+     },
+     {
+       "questionTitle":
+       "Когда родился Леонардо Да Винчи?",
+       "questionId": 5,
+       "questionType": "Выберите дату"
+     },
+     {
+       "questionTitle":
+       "Когда родился Леонардо Да Винчи?",
+       "questionId": 6,
+       "questionType": "Выберите дату"
+     },
+     {
+       "questionTitle":
+       "Когда родился Леонардо Да Винчи?",
+       "questionId": 7,
+       "questionType": "Выберите дату"
+     },
+     {
+       "questionTitle":
+       "Когда родился Леонардо Да Винчи?",
+       "questionId": 8,
+       "questionType": "Выберите дату"
+     }
+     
+ ]
+ }

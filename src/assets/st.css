@@ -284,6 +284,9 @@ img{
 tr{
   font-weight: bold;
   font-size: 20px; 
+  width: 250px;
+  display: block;
+
 }
 
 
@@ -294,7 +297,8 @@ tr{
   margin: 30px;
 }
 .dateCreated{
-  margin-left: 1200px;
+  display: block;
+  width: 250px;
 }
 
 .updated-text{

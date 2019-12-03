@@ -1,0 +1,18 @@
+{
+    "my-polls" : [
+     {
+       "profileImg": "../../src/assets/images/profile-img.png",
+       "questionTitle":
+       "Устроить вечеренку?!",
+       "dataCreated": "1 Апреля, 2019",
+       "updated": "Обновлено сегодня"
+     },
+     {
+       "profileImg": "../src/assets/images/profile-img.svg",
+       "questionTitle":
+       "Вечернее время",
+       "dataCreated": "3 Апреля, 2019",
+       "updated": "Обновлено 2 Апреля, 2019"
+     }
+ ]
+ }

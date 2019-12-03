@@ -10,6 +10,7 @@ import NavContent from './NavContent';
 import background from '../assets/images/luco.png'
 import profileImg from '../assets/images/profile-img.png'
 import notificationIcon from '../assets/images/notification1.svg'
+import AllPolls from './AllPolls';
 
 export default class UserWindow extends Component {
     render(){
@@ -22,20 +23,20 @@ export default class UserWindow extends Component {
                 <TopBlock>
                     <Title>
                     <Switch>
-                        <Route path="/my-polls">
+                        <Route path="/my-polls" >
                             <h3>Мои Опросы</h3>
                         </Route>
                         <Route path="/all-polls">
-                            <h1>Опросы</h1>
+                            <h3>Текущий опрос</h3>
                         </Route>
                         <Route path="/create-poll">
-                            <h1>Создать опрос</h1>
+                            <h3>Создать опрос</h3>
                         </Route>
                         <Route path="/statistics">
-                            <h1>Статистика</h1>
+                            <h3>Статистика</h3>
                         </Route>
                         <Route path="/profile">
-                            <h1>Профиль</h1>
+                            <h3>Профиль</h3>
                         </Route>
                     </Switch>
                     </Title>
@@ -57,8 +58,7 @@ export default class UserWindow extends Component {
                 </Router>
             </WindowContainer>
         )
-    }
-    
+    }    
 }
 
 const WindowContainer = styled.div`

@@ -6,10 +6,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact';
+
+import {Form, FormLabel, FormField, AuthInformation, Auth, FormContinButton, FormSocialLine, TermOfUse, FooterListing, FooterListingItem, Neobis } from './Registration'
 import styled from 'styled-components'
-import facebook from '../assets/images/facebook.svg'
 
-
+ 
 /* //Login with facebook
 const responseFacebook = (response) => {
     console.log(response);
@@ -22,8 +23,35 @@ export default class Login extends Component {
     constructor(){
         super();
         this.state = {
-            nickname: "",
-            password: ""
+            controls: {
+                nickname: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'name',
+                        placeholder: 'Nickname'
+                    },
+                    value: '',
+                    validation: {
+                        required: true
+                    },
+                    valid: false,
+                    touched: false
+                },
+                password: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'password',
+                        placeholder: 'Password'
+                    },
+                    value: '',
+                    validation: {
+                        required: true,
+                        minLength: 6
+                    },
+                    valid: false,
+                    touched: false
+                }
+            }
         };
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -70,52 +98,38 @@ export default class Login extends Component {
                         <li className='second'><p >OR</p></li>
                         <li className='third'><a href="#" >Answer someone else's questions</a></li>
                     </ul>
-                    <div className='clear'></div>
                 </div>
-                <div className='clear'></div>
                 <div >
-                <MDBRow>
-                    <MDBCol md="4">
-                    <form onSubmit={this.handleSubmit} >
-                    <input
-                       type="text"
-                       id="defaultFormCardNameEx"
-                       className="form-control mt-2 border-0"
-                       style={{backgroundColor: "#e6e6e6"}}
-                       name="nickname"
-                       placeholder="Никнейм"
-                       value={this.state.name}
-                       onChange={this.handleChange}
-                       required
-                    />
-                    
-                    <input 
+                    <Form onSubmit={this.handleSubmit} >
+                        <FormLabel>
+                            <FormField  placeholder='Никнейм' />
+                        </FormLabel>
+                        <FormLabel>
+                        <FormField 
                        type="password"
                        name="password"
                        id="defaultFormCardPasswordEx"
-                       className="form-control mt-2 border-0"
-                    style={{backgroundColor: "#e6e6e6"}}
-                       placeholder="Пароль"
+                       className="form-input"
+                        placeholder="Пароль"
                        value={this.state.password}
                        onChange={this.handleChange}
                        required
                     />
-                   
-                    <div className="text-center py-4 mt-2">
-                    <MDBBtn color="red" type="submit" block>Sign In</MDBBtn>
-                    <p className="mt-3"><hr/>или</p>
-                    <FacebookButton>Зарегистрироваться с помощью Facebook</FacebookButton>
-                    <GoogleButton>Зарегистрироваться с помощью Google</GoogleButton>
-                      
-                    <p className="mt-4" style={{fontSize:10, width:200}}>Продолжая, вы соглашаетесь с <a href="#">Условиями использования</a> и 
-                    <a href="instagram.com"> Политикой конфиденциальности</a> Survey App</p>
-                    <div className="copyright">
-		            <a>Neobis.kg</a>  ASU Design  2019
-		                </div>
-                    </div>
-                </form>
-                </MDBCol>
-                </MDBRow>
+                    </FormLabel>
+
+                    <FormContinButton>Продолжить</FormContinButton>
+                    <FormSocialLine><AuthInformation>ИЛИ</AuthInformation></FormSocialLine>
+                    
+                    <TermOfUse>Продолжая, вы соглашаетесь с<Auth><b>Условиями использования</b></Auth> и <Auth><b>Политикой конфиденциальности</b></Auth>Survey App</TermOfUse>
+                </Form>
+                <footer>
+                    <FooterListing>
+                        <FooterListingItem><Neobis>Neobis.kg</Neobis></FooterListingItem>
+                        <FooterListingItem>ASU design</FooterListingItem>
+                        <FooterListingItem>2019</FooterListingItem>
+                    </FooterListing>
+                </footer>
+            
                 </div>
                 </div>
                 </div>
@@ -125,52 +139,3 @@ export default class Login extends Component {
     
     }
 }
-
-const FacebookButton = styled.button`
-    width: 450px;
-    height: 42px;
-    background: #3A71FF;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 600;
-    display: block;
-    border: none;
-    margin: 0 auto;
-    cursor: pointer;
-
-    ::before{
-        content: '';
-        width: 35px;
-        height: 36px;
-        left: 24px;
-        top: 3px;
-        transform: translate(-50%);
-        background: url(${facebook});
-        position: absolute;
-`
-const GoogleButton = styled.button`
-    width: 450px;
-    height: 42px;
-    background: #FF473A;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 600;
-    display: block;
-    border: none;
-    margin: 0 auto;
-    cursor: pointer;
-    margin-top: 20px;
-
-    ::before{
-        content: '';
-        width: 35px;
-        height: 36px;
-        left: 24px;
-        top: 3px;
-        transform: translate(-50%);
-        background: url(${facebook});
-        position: absolute;
-`
-

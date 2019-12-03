@@ -8,23 +8,15 @@ import PollsTable from './PollsTable';
 
 
 export default class MyPolls extends Component{
-    state = {
-        data: []
-    }
-    componentDidMount(){
-        axios.get(`http://localhost:3000/qBank`)
-        .then(res => {  
-            console.log(res)
-            this.setState({data: res.data});
-        })
-        .catch(error => 
-          console.log("error:", error))
-      }
+      
     render(){
         return (
             <PollsContainer>
                 <Sorting><img alt="Сортировка" src={sortIcon}/><span>Сортировка</span></Sorting>
+                <Title>
                 <PollTitles>Названия опросов</PollTitles>
+                <PollTitles>Дата создания</PollTitles>
+                </Title>
                 <PollsTable  />
                 
             </PollsContainer>
@@ -32,7 +24,7 @@ export default class MyPolls extends Component{
     }
 }
 
-const PollsContainer = styled.div`
+export const PollsContainer = styled.div`
     display:block;
     margin: 0 auto;
     width: 96%;
@@ -63,9 +55,22 @@ img {
 const PollTitles = styled.h2`
 font-size: 20px;
 font-weight: bold;
-padding-top: 60px;
-padding-left: 50px;
+display: block;
+width: 250px;
+
+:nth-child(2n) {
+    margin-left:1080px;
+  }
+`
+
+const Title = styled.div`
+display: flex;
+flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 30px;
+  padding-top: 60px;
 padding-bottom: 15px;
 border-bottom: 3px solid rgba(63, 65, 74, 0.08);
+
 `
 

@@ -1,23 +1,18 @@
 {
-    "users" : [
+    "user" : [
      {
+       "nickname": "neobisov",
+       "firstname": "Нео",
+       "lastname": "Бисов",
+       "date": "11 мая 1988 года",
        "email":
-       "sddbakirova@gmail.com",
+       "neobisov@neo.bis",
+       "phone": "+8-800 5553535",
+       "state": "Кыргызстан",
+       "city": "Бишкек",
+       "gender": "мужской",
        "password": "sddQWERTY",
        "questionId": "099099"
-     },
-     {
-       "email":
-       "Who is the smartest in your point of view?",
-       "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
-       "questionId": "183452"
-     },
-     {
-       "email":
-         "Whom you would take an example from?  ",
-       "answers": ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
-       "questionId": "267908"
-     }
- ]
+     }]
  
  }
