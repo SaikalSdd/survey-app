@@ -15,7 +15,7 @@ export default class ProfileHalf extends React.Component {
   }
 
 componentDidMount(){
-    axios.get(`http://localhost:3003/user`)
+    axios.get(`http://localhost:3004/user`)
     .then(res => {  
         console.log(res)
         this.setState({data: res.data});

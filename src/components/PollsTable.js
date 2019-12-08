@@ -43,7 +43,7 @@ export default class PollsTable extends React.Component {
 
 
 componentDidMount(){
-    axios.get(`http://localhost:3001/my-polls`)
+    axios.get(`http://localhost:3003/my-polls`)
     .then(res => {  
         console.log(res)
         this.setState({data: res.data});

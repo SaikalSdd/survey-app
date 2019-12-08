@@ -5,7 +5,7 @@ const PollChoices = ({optionsImg, optionsText,selected}) => {
   return (
     <div className="questionBox">
       
-      {optionText.map((text, index) => (
+      {/* {optionText.map((text, index) => (
         <button
           key={index}
           className="answerBtn"
@@ -15,7 +15,7 @@ const PollChoices = ({optionsImg, optionsText,selected}) => {
           }}
         >
           {text}
-        </button>
+        </button> */}
       ))}
     </div>
   );

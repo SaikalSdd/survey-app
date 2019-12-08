@@ -6,27 +6,11 @@ import PersonalInfo from "./PersonalInfo";
 
 
 export default class ProfilePage extends React.Component {
-  constructor(props){
-    super(props) 
-      this.state = {
-        data: [],
-        disabled: true,
-      }
-    
-  }
+  
   handleEdit() {
     this.setState( {disabled: !this.state.disabled})
 }
 
-componentDidMount(){
-    axios.get(`http://localhost:3003/registrations`)
-    .then(res => {  
-        console.log(res)
-        this.setState({data: res.data});
-    })
-    .catch(error => 
-      console.log("error:", error))
-  }
 
   render() { 
       return ( 
