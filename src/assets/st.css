@@ -306,9 +306,61 @@ tr{
 }
 
 
+.formlist li:nth-child(6) input {  
+  width: 150px;
+}
 
+/* passwordStrength */
 
+.password-strength-meter {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
 
+.password-strength-meter-progress {
+  padding-left: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 8px;
+  border-radius: 10px;
+
+}
+
+.password-strength-meter-progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.password-strength-meter-label {
+width: 48px;
+padding-left: 20px;
+font-family: Muli;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 16px;
+
+letter-spacing: 0.2px;
+
+color: #FFFFFF;
+}
+
+.password-strength-meter-progress::-webkit-progress-value {
+  border-radius: 10px;
+  background-size: 15px 10px, 100% 100%, 100% 100%;
+}
+
+.strength-Легкий::-webkit-progress-value {
+  background-color:#FF1F00;
+}
+.strength-Средний::-webkit-progress-value {
+  background-color:#FFB800;;
+}
+.strength-Сильный::-webkit-progress-value {
+  background-color: #8A9AF4;
+}
 
 
 

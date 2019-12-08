@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 import threeDotsIcon from '../assets/images/three-dots.svg'
 import profileImg from '../assets/images/profile-img.png'
-import QuestionNum from './QuestionNum';
+import QuestionNum from './QuestionContent';
 import QuestionUserName from './QuestionUserName';
 
 

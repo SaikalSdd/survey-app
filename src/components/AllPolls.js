@@ -24,7 +24,30 @@ text-align: center;
 color: #6A6A6A;
 `
 
-const AllPolls = () => {
+export default class AllPolls  extends React.Component {
+/*     constructor(props){
+      super(props) 
+        this.state = {
+          counter : [
+          {questionId: 1}
+        ]}
+    }
+
+    handleNext() {
+      const increment = [...this.state.counter]
+      increment.questionId++;
+    this.setState({ increment })
+    alert(this.state.questionId)
+}
+
+    handlePrev() {
+      const increment = [...this.state.counter]
+      increment.questionId--;
+    this.setState({ increment })
+    alert(this.state.questionId)
+} */
+
+    render(){
     return (
             <PollsContainer>
                 <Title>Название опроса</Title>
@@ -36,6 +59,7 @@ const AllPolls = () => {
             </PollsContainer>
 
     )
+}
 }
 
 const BottomButtons = styled.div`
@@ -71,5 +95,3 @@ border: none;
     margin-left: 15px;
 }
 `
-
-export default AllPolls;
