@@ -16,11 +16,9 @@ import Content from './components/Content';
 
 const App = () => {
     return (
-        <BrowserRouter>
-        <Switch>
-            <Route  path='/' component={Login}/>
-        </Switch>
-        </BrowserRouter>
+        <div>
+        <Content />
+        </div>
     )
 }
 
