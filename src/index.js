@@ -17,7 +17,7 @@ import Content from './components/Content';
 const App = () => {
     return (
         <div>
-        <Content />
+        <Login/>
         </div>
     )
 }
